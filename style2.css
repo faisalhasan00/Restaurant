@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4; /* Light background for better contrast */
+}
+
+h1 {
+    text-align: center;
+    margin: 20px;
+    color: #333;
+    font-size: 2.5em; /* Larger, more prominent heading */
+}
+
+#cart-container {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+#cart-container:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.menu-section {
+    padding: 20px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px; /* Add space between sections */
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative; /* Needed for absolute positioning of text */
+}
+
+.menu-item img {
+    width: 120px; /* Larger images */
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px; /* Rounded corners for images */
+    margin-right: 20px;
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.menu-item img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.menu-item-info {
+    flex: 1;
+    position: relative;
+    z-index: 1; /* Ensure text is above the image */
+}
+
+.menu-item-info p {
+    margin: 0;
+    font-size: 18px; /* Larger font size for better readability */
+}
+
+.menu-item-info .item-name {
+    font-weight: bold;
+}
+
+.menu-item-info .item-price {
+    color: #666;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth color change and scale */
+}
+
+button:hover {
+    background-color: #218838;
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+@media (max-width: 600px) {
+    .menu-item {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: center; /* Center align text on small screens */
+    }
+
+    .menu-item img {
+        width: 100%; /* Responsive image width */
+        height: auto;
+    }
+
+    .menu-item-info {
+        width: 100%; /* Ensure text takes full width */
+        margin-top: 10px; /* Add spacing between image and text */
+    }
+
+    #cart-container {
+        position: static;
+        padding: 10px;
+        width: 93%; /* Full-width on small screens */
+    }
+}
+
+/* Cart Section */
+#cart-items li {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease; /* Smooth background color change */
+}
+
+#cart-items li:hover {
+    background-color: #f9f9f9; /* Light gray background on hover */
+}
+
+#cart-items .item-name {
+    font-weight: bold;
+}
+
+#cart-items .item-price {
+    color: #666;
+}
+
+#cart-total {
+    font-size: 18px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+#proceed-to-checkout {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease; /* Smooth color change */
+}
+
+#proceed-to-checkout:hover {
+    background-color: #218838;
+}

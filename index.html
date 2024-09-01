@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <h1>Your Restaurant Name</h1>
+
+    <!-- Cart Section -->
+    <div id="cart-container">
+        <h2>Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: ₹<span id="cart-total">0.00</span></p>
+        <!-- Adjust if needed based on your checkout handling -->
+        <a href="payment.html"><button id="proceed-to-checkout">Proceed to Checkout</button></a>
+    </div>
+
+    <!-- Starters Section -->
+    <div class="menu-section">
+        <h2>Starters</h2>
+        <!-- Example menu item -->
+        <div class="menu-item">
+            <img src="images/vegetable-spring-rolls.jpg" alt="Vegetable Spring Rolls"> <!-- Update image path -->
+            <div class="menu-item-info">
+                <p>Vegetable Spring Rolls</p>
+                <p>₹150</p>
+                <button onclick="addToCart('Vegetable Spring Rolls', 150)">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Add more menu items similarly -->
+    </div>
+
+    <!-- Main Course Section -->
+    <div class="menu-section">
+        <h2>Main Course</h2>
+        <!-- Example menu item -->
+        <div class="menu-item">
+            <img src="images/chicken-dum-biryani.jpg" alt="Chicken Dum Biryani"> <!-- Update image path -->
+            <div class="menu-item-info">
+                <p>Chicken Dum Biryani</p>
+                <p>₹400</p>
+                <button onclick="addToCart('Chicken Dum Biryani', 400)">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Add more menu items similarly -->
+    </div>
+
+    <!-- Cold Drinks Section -->
+    <div class="menu-section">
+        <h2>Cold Drinks</h2>
+        <!-- Example menu item -->
+        <div class="menu-item">
+            <img src="images/coke.jpg" alt="Coke"> <!-- Update image path -->
+            <div class="menu-item-info">
+                <p>Coke</p>
+                <p>₹50</p>
+                <button onclick="addToCart('Coke', 50)">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Add more menu items similarly -->
+    </div>
+
+    <!-- Desserts Section -->
+    <div class="menu-section">
+        <h2>Desserts</h2>
+        <!-- Example menu item -->
+        <div class="menu-item">
+            <img src="download.jpeg" alt="Chocolate Brownie"> <!-- Update image path -->
+            <div class="menu-item-info">
+                <p>Chocolate Brownie</p>
+                <p>₹150</p>
+                <button onclick="addToCart('Chocolate Brownie', 150)">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Add more menu items similarly -->
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

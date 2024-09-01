@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <h1>Payment</h1>
+    <div id="payment-container">
+        <h2>Choose a Payment Method</h2>
+        
+        <!-- List of payment items will be dynamically populated -->
+        <ul id="payment-items"></ul> 
+        
+        <!-- Total amount will be displayed here -->
+        <p>Total: ₹<span id="payment-total">0</span></p> 
+
+        <div id="payment-methods">
+            <button>
+                <span>Pay with Card</span>
+                <img width="50" height="50" src="https://img.icons8.com/ios/50/bank-card-back-side--v1.png" alt="bank-card-back-side"/>
+            </button>
+            <button>
+                <span>UPI</span>
+                <img width="48" height="48" src="https://img.icons8.com/fluency/48/google-pay-new.png" alt="google-pay"/>
+            </button>
+            <button>
+                <span>Google Pay</span>
+                <img width="48" height="48" src="https://img.icons8.com/fluency/48/google-pay-new.png" alt="google-pay"/>
+            </button>
+            <button>
+                <span>Paytm</span>
+                <img width="48" height="48" src="https://img.icons8.com/color/48/paytm.png" alt="paytm"/>
+            </button>
+            <button>
+                <span>Cash</span>
+                <img width="64" height="64" src="https://img.icons8.com/nolan/64/pay.png" alt="cash"/>
+            </button>
+        </div>
+
+        <!-- Form for confirming payment -->
+        <form id="payment-form">
+            <button type="submit">Confirm Payment</button>
+        </form>
+    </div>
+    <script src="payment.js"></script>
+</body>
+</html>
