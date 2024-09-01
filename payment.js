@@ -33,6 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const paymentForm = document.getElementById('payment-form');
     paymentForm.addEventListener('submit', (event) => {
         event.preventDefault();
+        const selectedMethod = document.querySelector('.selected-payment span')?.textContent;
+
+        if (!selectedMethod) {
+            alert('Please select a payment method before proceeding.');
+            return;
+        }
+
         if (cart.length === 0) {
             alert('Your cart is empty! Please add items to your cart before proceeding to payment.');
             return;
@@ -49,7 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const orderDetails = {
             tableNumber: tableNumber,
             cart: cart,
-            total: total.toFixed(2)
+            total: total.toFixed(2),
+            paymentMethod: selectedMethod
         };
 
         // Store order details in local storage
@@ -62,5 +70,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Redirect to confirmation page
         window.location.href = 'order-confirmation.html';
+    });
+
+    // Add event listeners to payment option buttons
+    document.querySelectorAll('.payment-option').forEach(button => {
+        button.addEventListener('click', (event) => {
+            // Remove the selected class from all buttons
+            document.querySelectorAll('.payment-option').forEach(btn => {
+                btn.classList.remove('selected-payment');
+            });
+
+            // Add the selected class to the clicked button
+            event.currentTarget.classList.add('selected-payment');
+
+            // Store selected payment method in localStorage or proceed with payment logic
+            const selectedMethod = event.currentTarget.querySelector('span').textContent;
+            localStorage.setItem('selectedPaymentMethod', selectedMethod);
+        });
     });
 });
